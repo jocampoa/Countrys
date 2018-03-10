@@ -5,6 +5,7 @@
     using Xamarin.Forms;
     using Views;
     using Service;
+    using Countrys.Helpers;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -103,12 +104,9 @@
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    //Languages.Error,
-                    //connection.Message,
-                    //Languages.Accept);
-                    "Error",
-                    "Message",
-                    "Accept");
+                    Languages.Error,
+                    connection.Message,
+                    Languages.Accept);
                 return;
             }
 
@@ -122,12 +120,9 @@
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    //Languages.Error,
-                    //Languages.SomethingWrong,
-                    //Languages.Accept);
-                    "Error",
-                    "SomethingWrong",
-                    "Accept");
+                    Languages.Error,
+                    Languages.SomethingWrong,
+                    Languages.Accept);
                 return;
             }
 
@@ -136,20 +131,26 @@
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    //Languages.Error,
-                    //token.ErrorDescription,
-                    //Languages.Accept);
-                    "Error",
-                    "ErrorDescription",
-                    "Accept");
+                    Languages.Error,
+                    token.ErrorDescription,
+                    Languages.Accept);
+
                 this.Password = string.Empty;
                 return;
             }
 
             var mainViewModel = MainViewModel.GetInstance();
-            mainViewModel.Token = token;
+            mainViewModel.Token = token.AccessToken;
+            mainViewModel.TokenType = token.TokenType;
+
+            if (this.IsRemembered)
+            {
+                Settings.Token = token.AccessToken;
+                Settings.TokenType = token.TokenType;
+            }     
+
             mainViewModel.Countrys = new CountrysViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new CountrysPage());
+            Application.Current.MainPage = new MasterPage();
 
             this.IsRunning = false;
             this.IsEnabled = true;

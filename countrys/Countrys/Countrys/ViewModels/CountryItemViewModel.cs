@@ -19,7 +19,7 @@
         private async void SelectCountry()
         {
             MainViewModel.GetInstance().Country = new CountryViewModel(this);
-            await Application.Current.MainPage.Navigation.PushAsync(new CountryTabbedPage());
+            await App.Navigator.PushAsync(new CountryTabbedPage());
         }
         #endregion
     }

@@ -1,7 +1,11 @@
 ﻿namespace Countrys.ViewModels
 {
+    using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using Models;
+    using Helpers;
+
     public class MainViewModel
     {
         #region Properties
@@ -11,7 +15,11 @@
             set;
         }
 
-        public TokenResponse Token
+        public string Token { get; set; }
+
+        public string TokenType { get; set; }
+
+        public ObservableCollection<MenuItemViewModel> Menus
         {
             get;
             set;
@@ -43,11 +51,13 @@
         {
             instance = this;
             this.Login = new LoginViewModel();
+            this.LoadMenu();
         }
         #endregion
 
         #region Singleton
         private static MainViewModel instance;
+
         public static MainViewModel GetInstance()
         {
             if (instance == null)
@@ -56,6 +66,34 @@
             }
 
             return instance;
+        }
+        #endregion
+
+        #region Methods
+        private void LoadMenu()
+        {
+            this.Menus = new ObservableCollection<MenuItemViewModel>();
+
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_settings",
+                PageName = "MyProfilePage",
+                Title = Languages.MyProfile,
+            });
+
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_insert_chart",
+                PageName = "StaticsPage",
+                Title = Languages.Statics,
+            });
+
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_exit_to_app",
+                PageName = "LoginPage",
+                Title = Languages.LogOut,
+            });
         }
         #endregion
     }
