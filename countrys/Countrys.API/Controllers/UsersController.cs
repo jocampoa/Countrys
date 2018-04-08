@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Description;
-using Countrys.API.Helpers;
-using Countrys.Domain;
-
-namespace Countrys.API.Controllers
+﻿namespace Countrys.API.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+    using System.Web.Http.Description;
+    using Countrys.API.Helpers;
+    using Countrys.Domain;
+    using Newtonsoft.Json.Linq;
+
+    [RoutePrefix("api/Users")]
     public class UsersController : ApiController
     {
         private DataContext db = new DataContext();
@@ -26,10 +28,25 @@ namespace Countrys.API.Controllers
         }
 
         // GET: api/Users/5
-        [ResponseType(typeof(User))]
-        public async Task<IHttpActionResult> GetUser(int id)
+        [HttpPost]
+        [Authorize]
+        [Route("GetUserByEmail")]
+        public async Task<IHttpActionResult> GetUserByEmail(JObject form)
         {
-            User user = await db.Users.FindAsync(id);
+            var email = string.Empty;
+            dynamic jsonObject = form;
+            try
+            {
+                email = jsonObject.Email.Value;
+            }
+            catch
+            {
+                return BadRequest("Missing parameter.");
+            }
+
+            var user = await db.Users.
+                Where(u => u.Email.ToLower() == email.ToLower()).
+                FirstOrDefaultAsync();
             if (user == null)
             {
                 return NotFound();
