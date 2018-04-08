@@ -8,7 +8,7 @@
         <ScrollView
             BindingContext="{Binding Login}">
             <StackLayout
-                Padding="5,20,5,5">
+                Padding="5">
                 <Image
                     Source="Onu"
                     WidthRequest="200">
@@ -88,7 +88,8 @@
                     <Button
                     BackgroundColor="Purple"
                     BorderRadius="23"
-                    HeightRequest="46"
+                    Command="{Binding RegisterCommand}"  
+                    HeightRequest="46"                      
                     HorizontalOptions="FillAndExpand"
                     IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                     Text="Register"

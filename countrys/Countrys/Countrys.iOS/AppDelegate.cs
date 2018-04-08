@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
-using UIKit;
-
-namespace Countrys.iOS
+﻿namespace Countrys.iOS
 {
+    using Foundation;
+    using UIKit;
+    using ImageCircle.Forms.Plugin.iOS;
+
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
     // application events from iOS.
@@ -23,8 +20,9 @@ namespace Countrys.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
-
+            
             return base.FinishedLaunching(app, options);
         }
     }
