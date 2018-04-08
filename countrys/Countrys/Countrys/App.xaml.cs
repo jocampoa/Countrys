@@ -16,20 +16,19 @@
         public App()
         {
             InitializeComponent();
-            this.MainPage = new MasterPage();
 
-            //if (string.IsNullOrEmpty(Settings.Token))
-            //{
-            //    this.MainPage = new NavigationPage(new LoginPage());
-            //}
-            //else
-            //{
-            //    var mainViewModel = MainViewModel.GetInstance();
-            //    mainViewModel.Token = Settings.Token;
-            //    mainViewModel.TokenType = Settings.TokenType;
-            //    mainViewModel.Countrys = new CountrysViewModel();
-            //    Application.Current.MainPage = new MasterPage();
-            //}
+            if (string.IsNullOrEmpty(Settings.Token))
+            {
+                this.MainPage = new NavigationPage(new LoginPage());
+            }
+            else
+            {
+                var mainViewModel = MainViewModel.GetInstance();
+                mainViewModel.Token = Settings.Token;
+                mainViewModel.TokenType = Settings.TokenType;
+                mainViewModel.Countrys = new CountrysViewModel();
+                Application.Current.MainPage = new MasterPage();
+            }
         }
         #endregion
 

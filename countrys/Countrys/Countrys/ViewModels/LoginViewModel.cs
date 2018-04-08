@@ -60,9 +60,6 @@
 
             this.IsRemembered = true;
             this.IsEnabled = true;
-
-            this.Email = "david.ocampo.3928@gmail.com";
-            this.Password = "11108355";
         }
         #endregion
 
