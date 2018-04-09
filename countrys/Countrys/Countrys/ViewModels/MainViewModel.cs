@@ -7,8 +7,12 @@
     using Helpers;
     using Countrys.Domain;
 
-    public class MainViewModel
+    public class MainViewModel : BaseViewModel
     {
+        #region Attibrutes
+        private UserLocal user;
+        #endregion
+
         #region Properties
         public List<Country> CountrysList
         {
@@ -16,9 +20,7 @@
             set;
         }
 
-        public string Token { get; set; }
-
-        public string TokenType { get; set; }
+        public TokenResponse Token { get; set; }
 
         public ObservableCollection<MenuItemViewModel> Menus
         {
@@ -26,10 +28,10 @@
             set;
         }
 
-        public User User
+        public UserLocal User
         {
-            get;
-            set;
+            get { return this.user; }
+            set { SetValue(ref this.user, value); }
         }
         #endregion
 
@@ -53,6 +55,18 @@
         }
 
         public RegisterViewModel Register
+        {
+            get;
+            set;
+        }
+
+        public MyProfileViewModel MyProfile
+        {
+            get;
+            set;
+        }
+
+        public ChangePasswordViewModel ChangePassword
         {
             get;
             set;

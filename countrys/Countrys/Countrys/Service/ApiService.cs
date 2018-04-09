@@ -10,6 +10,7 @@
     using System.Text;
     using System.Threading.Tasks;
     //using Domain;
+    using Helpers;
     public class ApiService
     {
         public async Task<Response> CheckConnection()
@@ -63,6 +64,46 @@
             catch
             {
                 return null;
+            }
+        }
+
+        public async Task<Response> ChangePassword(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            string tokenType,
+            string accessToken, ChangePasswordRequest changePasswordRequest)
+        {
+            try
+            {
+                var request = JsonConvert.SerializeObject(changePasswordRequest);
+                var content = new StringContent(request, Encoding.UTF8, "application/json");
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(tokenType, accessToken);
+                client.BaseAddress = new Uri(urlBase);
+                var url = string.Format("{0}{1}", servicePrefix, controller);
+                var response = await client.PostAsync(url, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                    };
+                }
+
+                return new Response
+                {
+                    IsSuccess = true,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
             }
         }
 

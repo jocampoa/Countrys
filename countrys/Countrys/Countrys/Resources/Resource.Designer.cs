@@ -20,7 +20,7 @@ namespace Countrys.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resource {
@@ -130,6 +130,15 @@ namespace Countrys.Resources {
         public static string Capital {
             get {
                 return ResourceManager.GetString("Capital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password was changed successfully..
+        /// </summary>
+        public static string ChagePasswordConfirm {
+            get {
+                return ResourceManager.GetString("ChagePasswordConfirm", resourceCulture);
             }
         }
         
@@ -283,6 +292,15 @@ namespace Countrys.Resources {
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password can&apos;t be changed, please try latter..
+        /// </summary>
+        public static string ErrorChangingPassword {
+            get {
+                return ResourceManager.GetString("ErrorChangingPassword", resourceCulture);
             }
         }
         
@@ -490,6 +508,15 @@ namespace Countrys.Resources {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The current password is incorrect.
+        /// </summary>
+        public static string PasswordError {
+            get {
+                return ResourceManager.GetString("PasswordError", resourceCulture);
             }
         }
         

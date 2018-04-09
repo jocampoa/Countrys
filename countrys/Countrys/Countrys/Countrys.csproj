@@ -38,6 +38,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Converter.cs" />
+    <Compile Include="Helpers\DataAccess.cs" />
     <Compile Include="Helpers\FilesHelper.cs" />
     <Compile Include="Helpers\Languages.cs" />
     <Compile Include="Helpers\PlatformCulture.cs" />
@@ -45,11 +47,13 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\TranslateExtension.cs" />
     <Compile Include="Infrastructure\InstanceLocator.cs" />
+    <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\ILocalize.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Border.cs" />
+    <Compile Include="Models\ChangePasswordRequest.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Currency.cs" />
     <Compile Include="Models\Language.cs" />
@@ -57,6 +61,7 @@
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\TokenResponse.cs" />
     <Compile Include="Models\Translations.cs" />
+    <Compile Include="Models\UserLocal.cs" />
     <Compile Include="Models\UserRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
@@ -65,16 +70,22 @@
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="Service\ApiService.cs" />
+    <Compile Include="Service\DataService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\CountryItemViewModel.cs" />
     <Compile Include="ViewModels\CountrysViewModel.cs" />
     <Compile Include="ViewModels\CountryViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuItemViewModel.cs" />
+    <Compile Include="ViewModels\MyProfileViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\BordersPage.xaml.cs">
       <DependentUpon>BordersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangePasswordPage.xaml.cs">
+      <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CountryPage.xaml.cs">
       <DependentUpon>CountryPage.xaml</DependentUpon>
@@ -99,6 +110,9 @@
     </Compile>
     <Compile Include="Views\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfilePage.xaml.cs">
+      <DependentUpon>MyProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -151,6 +165,12 @@
     <Reference Include="Plugin.Settings.Abstractions, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugins.Settings.3.1.1\lib\netstandard1.0\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLite.Net-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLiteNetExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SQLiteNetExtensions.1.3.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\SQLiteNetExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.configuration">
       <HintPath>..\..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v2.0.50727\System.configuration.dll</HintPath>
     </Reference>
@@ -174,6 +194,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +265,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\RegisterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MyProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ChangePasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

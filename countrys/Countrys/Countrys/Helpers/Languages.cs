@@ -301,5 +301,20 @@
         {
             get { return Resource.FromCamera; }
         }
+
+        public static string PasswordError
+        {
+            get { return Resource.PasswordError; }
+        }
+
+        public static string ErrorChangingPassword
+        {
+            get { return Resource.ErrorChangingPassword; }
+        }
+
+        public static string ChagePasswordConfirm
+        {
+            get { return Resource.ChagePasswordConfirm; }
+        }
     }
 }

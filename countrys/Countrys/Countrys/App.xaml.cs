@@ -4,6 +4,9 @@
     using Views;
     using ViewModels;
     using Helpers;
+    using Service;
+    using Models;
+    using System;
 
     public partial class App : Application
     {
@@ -17,16 +20,28 @@
         {
             InitializeComponent();
 
-            if (string.IsNullOrEmpty(Settings.Token))
+            if (Settings.IsRemembered == "true")
             {
-                this.MainPage = new NavigationPage(new LoginPage());
+                var dataService = new DataService();
+
+                var token = dataService.First<TokenResponse>(false);
+
+                if (token != null && token.Expires > DateTime.Now)
+                {
+                    var user = dataService.First<UserLocal>(false);
+                    var mainViewModel = MainViewModel.GetInstance();
+                    mainViewModel.Token = token;
+                    mainViewModel.User = user;
+                    mainViewModel.Countrys = new CountrysViewModel();
+                    Application.Current.MainPage = new MasterPage();
+                }
+                else
+                {
+                    this.MainPage = new NavigationPage(new LoginPage());
+                }
             }
             else
             {
-                var mainViewModel = MainViewModel.GetInstance();
-                mainViewModel.Token = Settings.Token;
-                mainViewModel.TokenType = Settings.TokenType;
-                mainViewModel.Countrys = new CountrysViewModel();
                 Application.Current.MainPage = new MasterPage();
             }
         }
