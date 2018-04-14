@@ -1,15 +1,15 @@
-﻿using System;
-
-using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
-using Plugin.Permissions;
-
-namespace Countrys.Droid
+﻿namespace Countrys.Droid
 {
+    using System;
+    using Android.App;
+    using Android.Content.PM;
+    using Android.Runtime;
+    using Android.Views;
+    using Android.Widget;
+    using Android.OS;
+    using Plugin.Permissions;
+    using FFImageLoading.Forms.Droid;
+
     [Activity(Label = "Countrys", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -19,8 +19,8 @@ namespace Countrys.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            CachedImageRenderer.Init(true);           
             LoadApplication(new App());
         }
 
