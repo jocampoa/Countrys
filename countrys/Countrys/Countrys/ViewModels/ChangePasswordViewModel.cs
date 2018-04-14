@@ -186,7 +186,7 @@
 
             await Application.Current.MainPage.DisplayAlert(
                 Languages.ConfirmLabel,
-                Languages.ChagePasswordConfirm,
+                Languages.ChangePasswordConfirm,
                 Languages.Accept);
             await App.Navigator.PopAsync();
         }

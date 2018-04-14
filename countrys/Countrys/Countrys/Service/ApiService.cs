@@ -20,7 +20,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Please turn on your internet settings.",
+                    Message = Languages.ConnectionError1,
                 };
             }
 
@@ -31,7 +31,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Check you internet connection.",
+                    Message = Languages.ConnectionError2,
                 };
             }
 

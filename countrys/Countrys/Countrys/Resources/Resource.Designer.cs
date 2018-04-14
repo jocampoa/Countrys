@@ -134,20 +134,20 @@ namespace Countrys.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The password was changed successfully..
-        /// </summary>
-        public static string ChagePasswordConfirm {
-            get {
-                return ResourceManager.GetString("ChagePasswordConfirm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Touch the image to chage it.
         /// </summary>
         public static string ChangeImage {
             get {
                 return ResourceManager.GetString("ChangeImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password was changed successfully..
+        /// </summary>
+        public static string ChangePasswordConfirm {
+            get {
+                return ResourceManager.GetString("ChangePasswordConfirm", resourceCulture);
             }
         }
         
@@ -193,6 +193,24 @@ namespace Countrys.Resources {
         public static string ConfirmValidation2 {
             get {
                 return ResourceManager.GetString("ConfirmValidation2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please turn on your internet settings..
+        /// </summary>
+        public static string ConnectionError1 {
+            get {
+                return ResourceManager.GetString("ConnectionError1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check you internet connection..
+        /// </summary>
+        public static string ConnectionError2 {
+            get {
+                return ResourceManager.GetString("ConnectionError2", resourceCulture);
             }
         }
         
@@ -445,6 +463,15 @@ namespace Countrys.Resources {
         public static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email or password incorrect..
+        /// </summary>
+        public static string LoginError {
+            get {
+                return ResourceManager.GetString("LoginError", resourceCulture);
             }
         }
         

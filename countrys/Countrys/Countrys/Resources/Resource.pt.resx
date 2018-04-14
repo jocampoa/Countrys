@@ -324,7 +324,7 @@
   <data name="FromCamera" xml:space="preserve">
     <value>Da câmera</value>
   </data>
-  <data name="ChagePasswordConfirm" xml:space="preserve">
+  <data name="ChangePasswordConfirm" xml:space="preserve">
     <value>A senha foi alterada com sucesso.</value>
   </data>
   <data name="ErrorChangingPassword" xml:space="preserve">
@@ -332,5 +332,14 @@
   </data>
   <data name="PasswordError" xml:space="preserve">
     <value>A senha atual está incorreta</value>
+  </data>
+  <data name="ConnectionError1" xml:space="preserve">
+    <value>Verifique se você ativou os parâmetros da internet.</value>
+  </data>
+  <data name="ConnectionError2" xml:space="preserve">
+    <value>Verifique se você possui uma conexão com a internet.</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>E-mail ou senha incorretos.</value>
   </data>
 </root>

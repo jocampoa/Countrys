@@ -312,9 +312,24 @@
             get { return Resource.ErrorChangingPassword; }
         }
 
-        public static string ChagePasswordConfirm
+        public static string ChangePasswordConfirm
         {
-            get { return Resource.ChagePasswordConfirm; }
+            get { return Resource.ChangePasswordConfirm; }
+        }
+
+        public static string ConnectionError1
+        {
+            get { return Resource.ConnectionError1; }
+        }
+
+        public static string ConnectionError2
+        {
+            get { return Resource.ConnectionError2; }
+        }
+
+        public static string LoginError
+        {
+            get { return Resource.LoginError; }
         }
     }
 }
