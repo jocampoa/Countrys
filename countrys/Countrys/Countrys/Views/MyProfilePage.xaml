@@ -39,7 +39,7 @@
                     <Entry 
                         Grid.Column="1" 
                         Grid.Row="0" 
-                        Placeholder="{i18n:Translate FirstNamePlaceHolder}" 
+                        Placeholder="FirstNamePlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding User.FirstName, Mode=TwoWay}">
                     </Entry>
@@ -53,7 +53,7 @@
                     <Entry 
                         Grid.Column="1" 
                         Grid.Row="1" 
-                        Placeholder="{i18n:Translate LastNamePlaceHolder}" 
+                        Placeholder="LastNamePlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding User.LastName, Mode=TwoWay}">
                     </Entry>
@@ -68,7 +68,7 @@
                         Keyboard="Email" 
                         Grid.Column="1" 
                         Grid.Row="2" 
-                        Placeholder="{i18n:Translate EmailPlaceHolder}" 
+                        Placeholder="EmailPlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding User.Email, Mode=TwoWay}">
                     </Entry>
@@ -95,7 +95,7 @@
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Text="{i18n:Translate Save}"
+                        Text="Save"
                         TextColor="White">
                     </Button>
                     <Button
@@ -105,7 +105,7 @@
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Text="{i18n:Translate ChangePassword}"
+                        Text="ChangePassword"
                         TextColor="White">
                     </Button>
                 </StackLayout>

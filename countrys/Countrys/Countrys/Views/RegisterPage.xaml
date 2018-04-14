@@ -21,7 +21,7 @@
                 <Label 
                     HorizontalOptions="Center" 
                     FontSize="Small" 
-                    Text="{i18n:Translate ChangeImage}" 
+                    Text="ChangeImage" 
                     TextColor="Black">
                 </Label>
                 <ActivityIndicator
@@ -35,35 +35,35 @@
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="0" 
-                        Text="{i18n:Translate FirstNameLabel}" 
+                        Text="FirstNameLabel" 
                         TextColor="Black" 
                         VerticalOptions="Center">
                     </Label>
                     <Entry 
                         Grid.Column="1" 
                         Grid.Row="0" 
-                        Placeholder="{i18n:Translate FirstNamePlaceHolder}" 
+                        Placeholder="FirstNamePlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding FirstName, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="1" 
-                        Text="{i18n:Translate LastNameLabel}" 
+                        Text="LastNameLabel" 
                         TextColor="Black" 
                         VerticalOptions="Center">
                     </Label>
                     <Entry 
                         Grid.Column="1" 
                         Grid.Row="1" 
-                        Placeholder="{i18n:Translate LastNamePlaceHolder}" 
+                        Placeholder="LastNamePlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding LastName, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="2" 
-                        Text="{i18n:Translate EMail}" 
+                        Text="EMail" 
                         TextColor="Black" 
                         VerticalOptions="Center">
                     </Label>
@@ -71,14 +71,14 @@
                         Keyboard="Email" 
                         Grid.Column="1" 
                         Grid.Row="2" 
-                        Placeholder="{i18n:Translate EmailPlaceHolder}" 
+                        Placeholder="EmailPlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding Email, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="3" 
-                        Text="{i18n:Translate PhoneLabel}" 
+                        Text="PhoneLabel" 
                         TextColor="Black" 
                         VerticalOptions="Center">
                     </Label>
@@ -86,14 +86,14 @@
                         Grid.Column="1" 
                         Grid.Row="3" 
                         Keyboard="Telephone" 
-                        Placeholder="{i18n:Translate PhonePlaceHolder}" 
+                        Placeholder="PhonePlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding Telephone, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="4" 
-                        Text="{i18n:Translate Password}" 
+                        Text="Password" 
                         TextColor="Black" 
                         VerticalOptions="Center">
                     </Label>
@@ -101,14 +101,14 @@
                         Grid.Column="1" 
                         Grid.Row="4" 
                         IsPassword="true" 
-                        Placeholder="{i18n:Translate PasswordPlaceHolder}" 
+                        Placeholder="PasswordPlaceHolder" 
                         TextColor="Black" 
                         Text="{Binding Password, Mode=TwoWay}">
                     </Entry>
                     <Label 
                         Grid.Column="0" 
                         Grid.Row="5" 
-                        Text="{i18n:Translate ConfirmLabel}" 
+                        Text="ConfirmLabel" 
                         TextColor="Black" 
                         VerticalOptions="Center">
                     </Label>
