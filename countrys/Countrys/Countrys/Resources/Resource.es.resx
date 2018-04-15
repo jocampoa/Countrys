@@ -342,4 +342,7 @@
   <data name="LoginError" xml:space="preserve">
     <value>Email o contraseña incorrectos.</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
 </root>

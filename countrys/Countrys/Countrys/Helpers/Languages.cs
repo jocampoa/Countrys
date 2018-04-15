@@ -331,5 +331,10 @@
         {
             get { return Resource.LoginError; }
         }
+
+        public static string ChangePassword
+        {
+            get { return Resource.ChangePassword; }
+        }
     }
 }

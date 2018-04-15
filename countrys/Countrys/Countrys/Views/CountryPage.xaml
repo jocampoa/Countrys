@@ -4,10 +4,11 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:i18n="clr-namespace:Countrys.Helpers"
              x:Class="Countrys.Views.CountryPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Icon="ic_action_info"
-    Title="Information">
+             Icon="ic_action_info"
+             Title="{i18n:Translate Information}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ffimageloadingsvg:SvgImageSourceConverter 
@@ -37,7 +38,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="0"
-                        Text="Capital:"
+                        Text="{i18n:Translate Capital}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -50,7 +51,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="1"
-                        Text="Population:"
+                        Text="{i18n:Translate Population}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -63,7 +64,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="2"
-                        Text="Area:"
+                        Text="{i18n:Translate Area}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -76,7 +77,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="3"
-                        Text="Alpha Code 2:"
+                        Text="{i18n:Translate AlphaCode2}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -89,7 +90,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="4"
-                        Text="Alpha Code 3:"
+                        Text="{i18n:Translate AlphaCode3}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -102,7 +103,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="5"
-                        Text="Region:"
+                        Text="{i18n:Translate Region}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -115,7 +116,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="6"
-                        Text="Subregion:"
+                        Text="{i18n:Translate Subregion}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -128,7 +129,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="7"
-                        Text="Demonym:"
+                        Text="{i18n:Translate Demonym}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -141,7 +142,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="8"
-                        Text="GINI:"
+                        Text="{i18n:Translate GINI}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -154,7 +155,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="9"
-                        Text="Native Name:"
+                        Text="{i18n:Translate NativeName}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -167,7 +168,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="10"
-                        Text="Numeric Code:"
+                        Text="{i18n:Translate NumericCode}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -180,7 +181,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="11"
-                        Text="CIOC:"
+                        Text="{i18n:Translate CIOC}"
                         TextColor="Black">
                     </Label>
                     <Label
