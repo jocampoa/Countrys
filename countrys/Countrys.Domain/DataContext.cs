@@ -1,6 +1,7 @@
 ﻿namespace Countrys.Domain
 {
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
 
     public class DataContext : DbContext
     {
@@ -32,5 +33,12 @@
         }
         #endregion
 
+        #region Methods
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Configurations.Add(new MatchesMap());
+        }
+        #endregion
     }
 }
