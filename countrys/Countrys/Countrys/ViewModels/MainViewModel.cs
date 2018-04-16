@@ -71,6 +71,12 @@
             get;
             set;
         }
+
+        public UbicationsViewModel Ubications
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region Constructors
@@ -120,6 +126,13 @@
                 Icon = "ic_exit_to_app",
                 PageName = "LoginPage",
                 Title = Languages.LogOut,
+            });
+
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_exit_to_app",
+                PageName = "UbicationsPage",
+                Title = "Ubications",
             });
         }
         #endregion

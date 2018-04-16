@@ -40,5 +40,7 @@
             modelBuilder.Configurations.Add(new MatchesMap());
         }
         #endregion
+
+        public System.Data.Entity.DbSet<Countrys.Domain.Ubication> Ubications { get; set; }
     }
 }

@@ -42,6 +42,12 @@
                 MainViewModel.GetInstance().MyProfile = new MyProfileViewModel();
                 App.Navigator.PushAsync(new MyProfilePage());
             }
+
+            else if (this.PageName == "UbicationsPage")
+            {
+                MainViewModel.GetInstance().Ubications = new UbicationsViewModel();
+                App.Navigator.PushAsync(new UbicationsPage());
+            }
         }
         #endregion
     }

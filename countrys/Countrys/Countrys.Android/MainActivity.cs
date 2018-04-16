@@ -20,7 +20,8 @@
 
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            CachedImageRenderer.Init(true);           
+            CachedImageRenderer.Init(true);
+            Xamarin.FormsMaps.Init(this, bundle);
             LoadApplication(new App());
         }
 
