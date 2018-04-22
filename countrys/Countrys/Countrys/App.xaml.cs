@@ -62,6 +62,66 @@
         {
             // Handle when your app resumes
         }
+
+        public static Action LoginFacebookFail
+        {
+            get
+            {
+                return new Action(() => Current.MainPage =
+                                  new NavigationPage(new LoginPage()));
+            }
+        }
+
+        public async static void LoginFacebookSuccess(FacebookResponse profile)
+        {
+            if (profile == null)
+            {
+                Application.Current.MainPage = new NavigationPage(new LoginPage());
+                return;
+            }
+
+            var apiService = new ApiService();
+            var dataService = new DataService();
+
+            var urlAPI = Application.Current.Resources["APISecurity"].ToString();
+            var token = await apiService.LoginFacebook(
+                urlAPI,
+                "/api",
+                "/Users/LoginFacebook",
+                profile);
+
+            if (token == null)
+            {
+                Application.Current.MainPage = new NavigationPage(new LoginPage());
+                return;
+            }
+
+            var user = await apiService.GetUserByEmail(
+                urlAPI,
+                "/api",
+                "/Users/GetUserByEmail",
+                token.TokenType,
+                token.AccessToken,
+                token.UserName);
+
+            UserLocal userLocal = null;
+            if (user != null)
+            {
+                userLocal = Converter.ToUserLocal(user);
+                dataService.DeleteAllAndInsert(userLocal);
+                dataService.DeleteAllAndInsert(token);
+            }
+
+            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = token;
+            mainViewModel.User = userLocal;
+            mainViewModel.Countrys = new CountrysViewModel();
+            Application.Current.MainPage = new MasterPage();
+            Settings.IsRemembered = "true";
+
+            mainViewModel.Countrys = new CountrysViewModel();
+            Application.Current.MainPage = new MasterPage();
+        }
         #endregion
     }
 }

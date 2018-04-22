@@ -189,6 +189,19 @@
             MainViewModel.GetInstance().Register = new RegisterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
+
+        public ICommand LoginFacebookCommand
+        {
+            get
+            {
+                return new RelayCommand(LoginFacebook);
+            }
+        }
+
+        async void LoginFacebook()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginFacebookPage());
+        }    
         #endregion
     }
 }
