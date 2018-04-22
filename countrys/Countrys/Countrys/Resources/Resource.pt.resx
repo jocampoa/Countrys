@@ -345,4 +345,31 @@
   <data name="ChangePassword" xml:space="preserve">
     <value>Alterar Senha</value>
   </data>
+  <data name="Locations" xml:space="preserve">
+    <value>Locais</value>
+  </data>
+  <data name="ErrorPasswordRecovery" xml:space="preserve">
+    <value>Não podemos enviar a nova senha para este email</value>
+  </data>
+  <data name="PasswordRecovery" xml:space="preserve">
+    <value>Sua nova senha foi enviada para seu email</value>
+  </data>
+  <data name="PasswordRecoveryTitle" xml:space="preserve">
+    <value>Recuperação de senha</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Digite sua senha atual...</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nova senha</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Digite a nova senha...</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
 </root>

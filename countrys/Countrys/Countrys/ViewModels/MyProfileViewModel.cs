@@ -241,7 +241,6 @@
                 MainViewModel.GetInstance().Token.TokenType,
                 MainViewModel.GetInstance().Token.AccessToken,
                 this.User.Email);
-
             var userLocal = Converter.ToUserLocal(userApi);
 
             MainViewModel.GetInstance().User = userLocal;

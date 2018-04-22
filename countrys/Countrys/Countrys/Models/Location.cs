@@ -1,8 +1,8 @@
 ﻿namespace Countrys.Models
 {
-    public class Ubication
+    public class Location
     {
-        public int UbicationId { get; set; }
+        public int LocationId { get; set; }
 
         public string Description { get; set; }
 

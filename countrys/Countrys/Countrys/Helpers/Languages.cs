@@ -336,5 +336,49 @@
         {
             get { return Resource.ChangePassword; }
         }
+
+        public static string Locations
+        {
+            get { return Resource.Locations; }
+        }
+
+        public static string PasswordRecovery
+        {
+            get { return Resource.PasswordRecovery; }
+        }
+        public static string ErrorPasswordRecovery
+        {
+            get { return Resource.ErrorPasswordRecovery; }
+        }
+
+        public static string PasswordRecoveryTitle
+        {
+            get { return Resource.PasswordRecoveryTitle; }
+        }
+
+        public static string Save
+        {
+            get { return Resource.Save; }
+        }
+
+        public static string CurrentPassword
+        {
+            get { return Resource.CurrentPassword; }
+        }
+
+        public static string CurrentPasswordPlaceHolder
+        {
+            get { return Resource.CurrentPasswordPlaceHolder; }
+        }
+
+        public static string NewPassword
+        {
+            get { return Resource.NewPassword; }
+        }
+
+        public static string NewPasswordPlaceHolder
+        {
+            get { return Resource.NewPasswordPlaceHolder; }
+        }
     }
 }

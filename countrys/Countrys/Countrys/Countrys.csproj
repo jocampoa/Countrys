@@ -62,7 +62,7 @@
     <Compile Include="Models\Response.cs" />
     <Compile Include="Models\TokenResponse.cs" />
     <Compile Include="Models\Translations.cs" />
-    <Compile Include="Models\Ubication.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\UserLocal.cs" />
     <Compile Include="Models\UserRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,12 +79,13 @@
     <Compile Include="ViewModels\CountryItemViewModel.cs" />
     <Compile Include="ViewModels\CountrysViewModel.cs" />
     <Compile Include="ViewModels\CountryViewModel.cs" />
+    <Compile Include="ViewModels\LocationsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MenuItemViewModel.cs" />
     <Compile Include="ViewModels\MyProfileViewModel.cs" />
+    <Compile Include="ViewModels\PasswordRecoveryViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\UbicationsViewModel.cs" />
     <Compile Include="Views\BordersPage.xaml.cs">
       <DependentUpon>BordersPage.xaml</DependentUpon>
     </Compile>
@@ -106,6 +107,9 @@
     <Compile Include="Views\LanguagesPage.xaml.cs">
       <DependentUpon>LanguagesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LocationsPage.xaml.cs">
+      <DependentUpon>LocationsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginFacebookPage.xaml.cs">
       <DependentUpon>LoginFacebookPage.xaml</DependentUpon>
     </Compile>
@@ -121,14 +125,14 @@
     <Compile Include="Views\MyProfilePage.xaml.cs">
       <DependentUpon>MyProfilePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PasswordRecoveryPage.xaml.cs">
+      <DependentUpon>PasswordRecoveryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TranslationsPage.xaml.cs">
       <DependentUpon>TranslationsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UbicationsPage.xaml.cs">
-      <DependentUpon>UbicationsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -322,13 +326,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\UbicationsPage.xaml">
+    <EmbeddedResource Include="Views\LoginFacebookPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\LoginFacebookPage.xaml">
+    <EmbeddedResource Include="Views\LocationsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PasswordRecoveryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

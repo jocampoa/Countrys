@@ -71,6 +71,9 @@
                     Text="{i18n:Translate Forgot}"
                     TextColor="Blue"
                     VerticalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RecoverPasswordCommand}"/>
+                    </Label.GestureRecognizers>
                 </Label>
                 <StackLayout
                     Margin="40,0"

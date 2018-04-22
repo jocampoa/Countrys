@@ -5,7 +5,7 @@
              xmlns:i18n="clr-namespace:Countrys.Helpers"
              x:Class="Countrys.Views.MyProfilePage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="{i18n:Translate MyProfile}">
+             Title="{i18n:Translate MyProfile}">
     <ContentPage.Content>
         <ScrollView  
             BindingContext="{Binding MyProfile}">
@@ -122,3 +122,4 @@
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
+    

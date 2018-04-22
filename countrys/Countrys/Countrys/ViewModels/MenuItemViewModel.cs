@@ -43,10 +43,10 @@
                 App.Navigator.PushAsync(new MyProfilePage());
             }
 
-            else if (this.PageName == "UbicationsPage")
+            else if (this.PageName == "LocationsPage")
             {
-                MainViewModel.GetInstance().Ubications = new UbicationsViewModel();
-                App.Navigator.PushAsync(new UbicationsPage());
+                MainViewModel.GetInstance().Locations = new LocationsViewModel();
+                App.Navigator.PushAsync(new LocationsPage());
             }
         }
         #endregion

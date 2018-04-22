@@ -72,11 +72,18 @@
             set;
         }
 
-        public UbicationsViewModel Ubications
+        public LocationsViewModel Locations
         {
             get;
             set;
         }
+
+        public PasswordRecoveryViewModel PasswordRecovery
+        {
+            get;
+            set;
+        }
+        
         #endregion
 
         #region Constructors
@@ -130,9 +137,9 @@
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_exit_to_app",
-                PageName = "UbicationsPage",
-                Title = "Ubications",
+                Icon = "ic_settings",
+                PageName = "LocationsPage",
+                Title = Languages.Locations,
             });
         }
         #endregion

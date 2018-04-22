@@ -9,7 +9,7 @@
     using Xamarin.Forms;
     using Xamarin.Forms.Maps;
 
-    public class UbicationsViewModel
+    public class LocationsViewModel
     {
         #region Services
         ApiService apiService;
@@ -24,7 +24,7 @@
         #endregion
 
         #region Constructors
-        public UbicationsViewModel()
+        public LocationsViewModel()
         {
             instance = this;
 
@@ -33,13 +33,13 @@
         #endregion
 
         #region Sigleton
-        static UbicationsViewModel instance;
+        static LocationsViewModel instance;
 
-        public static UbicationsViewModel GetInstance()
+        public static LocationsViewModel GetInstance()
         {
             if (instance == null)
             {
-                return new UbicationsViewModel();
+                return new LocationsViewModel();
             }
 
             return instance;
@@ -61,10 +61,10 @@
 
             var mainViewModel = MainViewModel.GetInstance();
 
-            var response = await apiService.GetList<Ubication>(
+            var response = await apiService.GetList<Location>(
                 "http://productszuluapi.azurewebsites.net",
                 "/api",
-                "/Ubications",
+                "/Locations",
                 mainViewModel.Token.TokenType,
                 mainViewModel.Token.AccessToken);
 
@@ -77,17 +77,17 @@
                 return;
             }
 
-            var ubications = (List<Ubication>)response.Result;
+            var locations = (List<Location>)response.Result;
             Pins = new ObservableCollection<Pin>();
-            foreach (var ubication in ubications)
+            foreach (var location in locations)
             {
                 Pins.Add(new Pin
                 {
-                    Address = ubication.Address,
-                    Label = ubication.Description,
+                    Address = location.Address,
+                    Label = location.Description,
                     Position = new Position(
-                        ubication.Latitude,
-                        ubication.Longitude),
+                        location.Latitude,
+                        location.Longitude),
                     Type = PinType.Place,
                 });
             }

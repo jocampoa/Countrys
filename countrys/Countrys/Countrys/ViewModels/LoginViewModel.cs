@@ -201,7 +201,22 @@
         async void LoginFacebook()
         {
             await Application.Current.MainPage.Navigation.PushAsync(new LoginFacebookPage());
-        }    
+        }
+
+        public ICommand RecoverPasswordCommand
+        {
+            get
+            {
+                return new RelayCommand(RecoverPassword);
+            }
+        }
+
+        async void RecoverPassword()
+        {
+            MainViewModel.GetInstance().PasswordRecovery =
+                new PasswordRecoveryViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new PasswordRecoveryPage());
+        }       
         #endregion
     }
 }
