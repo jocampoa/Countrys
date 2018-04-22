@@ -7,6 +7,7 @@
     using Service;
     using Models;
     using System;
+    using System.Threading.Tasks;
 
     public partial class App : Application
     {
@@ -63,16 +64,16 @@
             // Handle when your app resumes
         }
 
-        public static Action LoginFacebookFail
+        public static Action HideLoginView
         {
             get
             {
-                return new Action(() => Current.MainPage =
+                return new Action(() => Application.Current.MainPage =
                                   new NavigationPage(new LoginPage()));
             }
         }
 
-        public async static void LoginFacebookSuccess(FacebookResponse profile)
+        public static async Task NavigateToProfile(FacebookResponse profile)
         {
             if (profile == null)
             {
@@ -83,9 +84,9 @@
             var apiService = new ApiService();
             var dataService = new DataService();
 
-            var urlAPI = Application.Current.Resources["APISecurity"].ToString();
+            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
             var token = await apiService.LoginFacebook(
-                urlAPI,
+                apiSecurity,
                 "/api",
                 "/Users/LoginFacebook",
                 profile);
@@ -97,7 +98,7 @@
             }
 
             var user = await apiService.GetUserByEmail(
-                urlAPI,
+                apiSecurity,
                 "/api",
                 "/Users/GetUserByEmail",
                 token.TokenType,

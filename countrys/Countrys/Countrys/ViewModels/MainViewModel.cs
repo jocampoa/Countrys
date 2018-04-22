@@ -130,16 +130,16 @@
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_exit_to_app",
-                PageName = "LoginPage",
-                Title = Languages.LogOut,
+                Icon = "ic_settings",
+                PageName = "LocationsPage",
+                Title = Languages.Locations,
             });
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "ic_settings",
-                PageName = "LocationsPage",
-                Title = Languages.Locations,
+                Icon = "ic_exit_to_app",
+                PageName = "LoginPage",
+                Title = Languages.LogOut,
             });
         }
         #endregion

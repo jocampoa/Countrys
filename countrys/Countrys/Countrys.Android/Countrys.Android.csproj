@@ -270,9 +270,9 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Implementations\Config.cs" />
     <Compile Include="Implementations\Localize.cs" />
+    <Compile Include="Implementations\LoginPageRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
-    <Compile Include="Renderers\LoginFacebookRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

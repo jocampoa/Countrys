@@ -92,9 +92,9 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Implementations\Config.cs" />
     <Compile Include="Implementations\Localize.cs" />
+    <Compile Include="Implementations\LoginPageRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Renderers\LoginFacebookRenderer.cs" />
     <None Include="app.config" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />

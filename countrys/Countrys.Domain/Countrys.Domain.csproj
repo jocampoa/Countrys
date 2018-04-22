@@ -53,6 +53,7 @@
     <Compile Include="Board.cs" />
     <Compile Include="BoardStatus.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="FacebookResponse.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="GroupTeam.cs" />
     <Compile Include="Match.cs" />
